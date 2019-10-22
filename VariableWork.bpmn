@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1haq8uo" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.4.1">
+  <bpmn:process id="VariablesWork_1bu3kc7" name="VariablesWork" isExecutable="true">
+    <bpmn:startEvent id="StartProcessEvent_1" name="Start Process">
+      <bpmn:outgoing>SequenceFlow_0zdmwtx</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:intermediateCatchEvent id="NewOrderEvent_0yleygj" name="New order">
+      <bpmn:incoming>SequenceFlow_0zdmwtx</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0tmbndg</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_1czjz3g" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:userTask id="UserTask_0trp7mn" name="User task">
+      <bpmn:incoming>SequenceFlow_0tmbndg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_06sslkj</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0zdmwtx" sourceRef="StartProcessEvent_1" targetRef="NewOrderEvent_0yleygj" />
+    <bpmn:sequenceFlow id="SequenceFlow_0tmbndg" sourceRef="NewOrderEvent_0yleygj" targetRef="UserTask_0trp7mn" />
+    <bpmn:endEvent id="EndEvent_1adzcg5" name="End Process">
+      <bpmn:incoming>SequenceFlow_02ns1p6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="UserSecondTask_1di34q1" name="User second task">
+      <bpmn:incoming>SequenceFlow_06sslkj</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_02ns1p6</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_06sslkj" sourceRef="UserTask_0trp7mn" targetRef="UserSecondTask_1di34q1" />
+    <bpmn:sequenceFlow id="SequenceFlow_02ns1p6" sourceRef="UserSecondTask_1di34q1" targetRef="EndEvent_1adzcg5" />
+  </bpmn:process>
+  <bpmn:message id="Message_1czjz3g" name="NewOrder" />
+  <bpmn:message id="Message_0q74i22" name="check" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="VariablesWork_1bu3kc7">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartProcessEvent_1">
+        <dc:Bounds x="212" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="198" y="145" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="IntermediateCatchEvent_0ha7zo1_di" bpmnElement="NewOrderEvent_0yleygj">
+        <dc:Bounds x="322" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="314" y="145" width="53" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0axnuc2_di" bpmnElement="UserTask_0trp7mn">
+        <dc:Bounds x="450" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0zdmwtx_di" bpmnElement="SequenceFlow_0zdmwtx">
+        <di:waypoint x="248" y="120" />
+        <di:waypoint x="322" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0tmbndg_di" bpmnElement="SequenceFlow_0tmbndg">
+        <di:waypoint x="358" y="120" />
+        <di:waypoint x="450" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1adzcg5_di" bpmnElement="EndEvent_1adzcg5">
+        <dc:Bounds x="802" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="791" y="145" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_088y8ye_di" bpmnElement="UserSecondTask_1di34q1">
+        <dc:Bounds x="630" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_06sslkj_di" bpmnElement="SequenceFlow_06sslkj">
+        <di:waypoint x="550" y="120" />
+        <di:waypoint x="630" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_02ns1p6_di" bpmnElement="SequenceFlow_02ns1p6">
+        <di:waypoint x="730" y="120" />
+        <di:waypoint x="802" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
