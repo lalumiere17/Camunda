@@ -1,0 +1,11 @@
+Message
+https://docs.camunda.org/manual/7.9/reference/rest/message/post-message/
+
+Process Variables
+https://docs.camunda.org/manual/7.5/user-guide/process-engine/variables/
+
+Update/Delete Process Variables
+https://docs.camunda.org/manual/7.6/reference/rest/process-instance/variables/post-variables/
+
+REST API
+https://docs.camunda.org/manual/7.8/reference/rest/
